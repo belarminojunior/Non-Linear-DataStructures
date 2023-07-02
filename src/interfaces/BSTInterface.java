@@ -3,8 +3,7 @@ package interfaces;
 public interface BSTInterface<T> {
     void insert (T element);
     void delete(T element);
-    void preOrder();
-    void inOrder();
-    void  postOrder();
+    int size();
+    int height();
     boolean search(T element);
 }

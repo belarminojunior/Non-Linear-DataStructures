@@ -51,9 +51,9 @@ public class BinarySearchTree<T extends Comparable> implements BSTInterface<T> {
                 return root.left;
 
             // Two children
-            BSTNode<T> sucessor = minimum(root.right);
-            root.setKey(sucessor.getKey());
-            root.right = delete(root.right, sucessor.getKey());
+            BSTNode<T> successor = minimum(root.right);
+            root.setKey(successor.getKey());
+            root.right = delete(root.right, successor.getKey());
         }
 
         return root;
@@ -76,6 +76,45 @@ public class BinarySearchTree<T extends Comparable> implements BSTInterface<T> {
         return search(root.right, element);
     }
 
+    public void printPreOrder(BSTNode<T> root) {
+        if (root == null)
+            return;
+
+        System.out.println(root.getKey());
+        printPreOrder(root.left);
+        printPreOrder(root.right);
+    }
+
+    public void printInOrder(BSTNode<T> root) {
+        if (root == null)
+            return;
+
+        printInOrder(root.left);
+        System.out.println(root.getKey());
+        printInOrder(root.right);
+    }
+
+    public void printPosOrder(BSTNode<T> root) {
+        if (root == null)
+            return;
+
+        printInOrder(root.left);
+        printInOrder(root.right);
+        System.out.println(root.getKey());
+    }
+
+    private int countNodes(BSTNode<T> root) {
+        if (root == null)
+            return 0;
+        return 1 + countNodes(root.left) + countNodes(root.right);
+    }
+
+    private int treeHeight(BSTNode<T> root) {
+        if (root == null)
+            return 0;
+        return 1 + Math.max(treeHeight(root.left), treeHeight(root.right));
+    }
+
     @Override
     public void insert(T element) {
         root = insert(root, element);
@@ -87,22 +126,17 @@ public class BinarySearchTree<T extends Comparable> implements BSTInterface<T> {
     }
 
     @Override
-    public void preOrder() {
-        
+    public int size() {
+        return countNodes(root);
     }
 
     @Override
-    public void inOrder() {
-
-    }
-
-    @Override
-    public void postOrder() {
-
+    public int height() {
+        return treeHeight(root);
     }
 
     @Override
     public boolean search(T element) {
-        return false;
+        return search(root, element) != null;
     }
 }
