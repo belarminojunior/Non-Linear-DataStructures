@@ -5,7 +5,7 @@ import nodes.BSTNode;
 
 public class BinarySearchTree<T extends Comparable> implements BSTInterface<T> {
 
-    private BSTNode<T> root;
+    protected BSTNode<T> root;
 
     public BSTNode<T> getRoot() {
         return root;
@@ -59,7 +59,7 @@ public class BinarySearchTree<T extends Comparable> implements BSTInterface<T> {
         return root;
     }
 
-    private BSTNode<T> minimum(BSTNode<T> root) {
+    protected BSTNode<T> minimum(BSTNode<T> root) {
         while(root.left != null)
             root = root.left;
 

@@ -5,6 +5,8 @@ public class BSTNode<T> {
     private T key;
     public BSTNode<T> left, right;
 
+    private int height; // AVL
+
     public BSTNode(T key) {
         this.key = key;
         this.left = null;
@@ -33,5 +35,13 @@ public class BSTNode<T> {
 
     public void setRight(BSTNode<T> right) {
         this.right = right;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 }
