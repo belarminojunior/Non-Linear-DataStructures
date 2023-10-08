@@ -1,4 +1,4 @@
-package nodes;
+package BinarySearch;
 
 public class BSTNode<T> {
 

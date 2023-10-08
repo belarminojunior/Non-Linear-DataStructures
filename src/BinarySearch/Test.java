@@ -1,4 +1,4 @@
-import datastructures.BinarySearchTree;
+package BinarySearch;
 
 public class Test {
     public static void main(String[] args) {

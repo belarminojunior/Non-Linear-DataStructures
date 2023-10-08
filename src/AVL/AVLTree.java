@@ -1,6 +1,7 @@
-package datastructures;
+package AVL;
 
-import nodes.BSTNode;
+import BinarySearch.BinarySearchTree;
+import BinarySearch.BSTNode;
 
 public class AVLTree<T extends Comparable> extends BinarySearchTree<T> {
 

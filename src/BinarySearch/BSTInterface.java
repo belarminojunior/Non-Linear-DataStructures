@@ -1,4 +1,4 @@
-package interfaces;
+package BinarySearch;
 
 public interface BSTInterface<T> {
     void insert (T element);

@@ -1,7 +1,4 @@
-package datastructures;
-
-import interfaces.BSTInterface;
-import nodes.BSTNode;
+package BinarySearch;
 
 public class BinarySearchTree<T extends Comparable> implements BSTInterface<T> {
 
