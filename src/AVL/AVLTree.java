@@ -104,7 +104,7 @@ public class AVLTree<T extends Comparable> extends BinarySearchTree<T> {
         return node.getHeight();
     }
 
-    private int balanceFactor(BSTNode<T> node) {
+    public int balanceFactor(BSTNode<T> node) {
         if (node == null)
             return 0;
 
@@ -142,7 +142,6 @@ public class AVLTree<T extends Comparable> extends BinarySearchTree<T> {
         updateHeight(y);
 
         return y;
-
     }
 
     public BSTNode<T> rotateRight(BSTNode<T> y) {
@@ -159,6 +158,4 @@ public class AVLTree<T extends Comparable> extends BinarySearchTree<T> {
         return x;
 
     }
-
-
 }
